@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Fullstack Developer</p>
+                <h1>Hi, I'm <span>Yamei</span><br>Song</h1>
+            </div>
+        </div>
+    </div>
+    <!-- ---------About--------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="subtitle">About me</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor quam ut dolor consequat
+                        tincidunt. Fusce hendrerit fringilla est, nec sollicitudin libero vestibulum id. Nullam
+                        volutpat, quam ac ultricies efficitur, ipsum est vulputate magna, nec congue turpis felis id
+                        urna. Pellentesque at nisi at lorem accumsan bibendum. Maecenas nec dui a ipsum interdum
+                        gravida. Suspendisse ut ultrices justo. Ut vitae arcu semper, ultricies mi et, pellentesque
+                        arcu. Integer nec eros diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+                        posuere cubilia Curae; Fusce id tristique neque, eget consectetur est. Donec nec pulvinar
+                        tortor, sit amet feugiat velit. Vivamus vitae magna nec sapien elementum fermentum vel a ligula.
+                    </p>
+                    <div class="tab-title">
+                        <div class="tab-link active-link" onclick="opentab('skills')">Skills</div>
+                        <div class="tab-link" onclick="opentab('experience')">Experience</div>
+                        <div class="tab-link" onclick="opentab('education')">Education</div>
+                    </div>
+                    <div class="tab-content active-content" id="skills">
+                        <ul>
+                            <li><span>Web Development</span><br>Web app development</li>
+                            <li><span>Game Development</span><br>SDL game development</li>
+                            <li><span>Quantitative Development</span><br>Building quantitative trading system</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="experience">
+                        <ul>
+                            <li><span>Oct 2020 - Apr 2022</span><br>Quantitative Developer at Auqa Selection Ltd.</li>
+                            <li><span>Jul 2017 - Apr 2020</span><br>Technical Writer at Magewell Electronics</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="education">
+                        <ul>
+                            <li><span>Sep 2023 - May 2025</span><br>Master of Information Technology at UNSW</li>
+                            <li><span>Sep 2013 - Jun 2017</span><br>Bachelor of Energy Engineering at Southeast University</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function opentab(tabname) {
+        var tablinks = document.getElementsByClassName('tab-link');
+        var tabcontents = document.getElementsByClassName('tab-content');
+
+        for (const tablink of tablinks) {
+            tablink.classList.remove('active-link');
+        }
+        for (const tabcontent of tabcontents) {
+            tabcontent.classList.remove('active-content');
+        }
+
+        event.currentTarget.classList.add('active-link');
+        document.getElementById(tabname).classList.add('active-content');
+    }
+</script>
+
+</html>

@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080800; /* Background color for the body */
+    color: #fff; /* Text color for the body */
+}
+
+#header {
+    width: 100%;
+    height: 100vh; /* 100% of the viewport height */
+    background-image: url(images/background.png); /* Background image for the header */
+    background-size: cover; /* Cover the entire background area */
+    background-position: center; /* Center the background image */
+}
+
+.container {
+    padding: 10px 10%; /* Padding of 10 pixels on the top and bottom, and 10% of the container's width on the left and right */
+}
+
+nav {
+    display: flex; /* Use flexbox layout for the navigation */
+    align-items: center; /* Align items vertically at the center */
+    justify-content: space-between; /* Distribute items evenly along the main axis with maximum space between them */
+    flex-wrap: wrap; /* Allow items to wrap onto multiple lines if needed */
+}
+
+.logo {
+    width: 140px;
+}
+
+nav ul li {
+    display: inline-block; /* Displays list items horizontally */
+    list-style: none; /* Removes the default list-style (bullet point) */
+    margin: 10px 20px; /* Sets top and bottom margins to 10px, left and right margins to 20px */
+}
+
+nav ul li a {
+    color: #fff; /* Sets the text color of anchor links to white */
+    text-decoration: none; /* Removes underline decoration from anchor links */
+    font-size: 18px; /* Sets the font size of anchor links to 18 pixels */
+    position: relative;
+}
+
+nav ul li a::after {
+    content: ''; /* Adds content to the pseudo-element */
+    background: #ff004f; /* Sets the background color of the decorative line */
+    width: 0; /* Sets the width of the decorative line to 100% */
+    height: 3px; /* Sets the height of the decorative line to 3 pixels */
+    left: 0; /* Positions the decorative line at the left edge of the anchor */
+    bottom: -6px; /* Positions the decorative line 6 pixels below the anchor */
+    position: absolute; /* Positions the pseudo-element absolutely relative to its containing anchor */
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.header-text {
+    margin-top: 20%; /* Sets the margin to 20% of the height of its containing block*/
+    font-size: 30px;
+}
+
+.header-text h1 {
+    margin-top: 20px; /* Sets the margin relative to its parent: .header-text */
+    font-size: 60px;
+}
+
+.header-text h1 span {
+    color: #ff004f;
+}
+
+/* -----------About----------- */
+
+#about {
+    padding: 80px 0;
+    color: #ababab;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1 {
+    flex-basis: 35%; /* Sets the initial main size of the flex item to be 35% of the container's main size */
+}
+
+.about-col-1 img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+}
+
+.subtitle {
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.tab-title {
+    display: flex;
+    margin: 20px 0 40px; /* Set margin: 20px on top, 0 on right and left, 40px on bottom */
+}
+
+.tab-link {
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-link::after {
+    content: '';
+    background: #ff004f;
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: -8px;
+    position: absolute;
+    transition: 0.5s;
+}
+
+.tab-link.active-link::after {
+    width: 50%;
+}
+
+.tab-content ul li {
+    list-style: none;
+    padding: 10px 0;
+}
+
+.tab-content ul li span {
+    color: #b54769;
+    font-size: 14px;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active-content {
+    display: block;
+}
